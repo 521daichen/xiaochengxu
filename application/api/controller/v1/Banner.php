@@ -32,7 +32,6 @@ class Banner
             //bannermissexception 自己或者父类必须继承Exception 不然会报错
             throw new BannerMissException();
         }
-        return $banner;
+        return json($banner);
     }
-
 }

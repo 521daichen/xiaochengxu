@@ -23,7 +23,6 @@ class ExceptionHandler extends Handle {
         //两类异常 由用户验证错误所发生的异常 返回问题给前端
         //系统自身发生的异常 如代码错误 不返回问题给前端 记录日志
         if($e instanceof BaseException){
-
             //如果是自定义的异常
             $this->code = $e->code;
             $this->msg = $e->msg;
