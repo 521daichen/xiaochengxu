@@ -7,8 +7,6 @@
  */
 
 namespace app\api\validate;
-
-
 class IDCollection extends BaseValidate
 {
     protected $rule = [
@@ -21,10 +19,12 @@ class IDCollection extends BaseValidate
 
     //$value 客户端传过来的ids
     protected function checkIDs($value){
+
         $values = explode(',',$value);
         if(empty($values)){
             return false;
         }
+
         foreach ($values as $id){
             if(!$this->isPostitiveInteger($id)){
                 return false;
