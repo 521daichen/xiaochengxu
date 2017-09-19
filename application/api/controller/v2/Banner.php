@@ -6,7 +6,7 @@
  * Time: 下午11:00
  */
 
-namespace app\api\controller\v1;
+namespace app\api\controller\v2;
 use app\api\validate\IDMustBePostiveInt;
 use \app\api\model\Banner as BannerModel;
 use app\lib\exception\BannerMissException;
@@ -23,16 +23,7 @@ class Banner
      */
 
     public function getBanner($id){
-        //参数拦截器 校验层
-        (new IDMustBePostiveInt())->goCheck();
-        //独立验证
-        //验证器
-        $banner = BannerModel::getBannerByID($id);
-        if(!$banner){
-            //bannermissexception 自己或者父类必须继承Exception 不然会报错
-            throw new BannerMissException();
-        }
 
-        return $banner;
+        return 'this is v2 version';
     }
 }
