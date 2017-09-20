@@ -22,7 +22,7 @@ class Banner
      * @http GET
      */
 
-    public function getBanner($id){
+    public function getBanner($id){ 
         //参数拦截器 校验层
         (new IDMustBePostiveInt())->goCheck();
         //独立验证
