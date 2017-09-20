@@ -7,11 +7,9 @@
  */
 
 namespace app\api\controller\v1;
+use app\api\model\Banner as BannerModel;
 use app\api\validate\IDMustBePostiveInt;
-use \app\api\model\Banner as BannerModel;
 use app\lib\exception\BannerMissException;
-use think\Exception;
-use think\Validate;
 
 class Banner
 {
@@ -22,7 +20,7 @@ class Banner
      * @http GET
      */
 
-    public function getBanner($id){ 
+    public function getBanner($id){
         //参数拦截器 校验层
         (new IDMustBePostiveInt())->goCheck();
         //独立验证
@@ -32,7 +30,8 @@ class Banner
             //bannermissexception 自己或者父类必须继承Exception 不然会报错
             throw new BannerMissException();
         }
-
         return $banner;
     }
+
+
 }
